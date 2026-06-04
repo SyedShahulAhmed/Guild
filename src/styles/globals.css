@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+/* // E6D5A8
+  // C0C0C0
+  // FF6B6B
+  // FAEB92
+  // 8A244B
+  // FF0B55 */
+
+:root {
+  --accent: #e6d5a8;
+
+  --background: #0f0d0d;
+  --background-secondary: #0f0f0f;
+
+  --card: #111827;
+  --card-hover: #1f2937;
+  --border: #334155;
+
+  --foreground: #ffffff;
+  --muted-foreground: #94a3b8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
