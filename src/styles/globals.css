@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Outfit:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 /* // E6D5A8
@@ -8,21 +9,56 @@
   // 8A244B
   // FF0B55 */
 
-:root {
-  --accent: #e6d5a8;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
 
-  --background: #0f0d0d;
-  --background-secondary: #0f0f0f;
+@theme {
+  --color-accent: #e6d5a8;
 
-  --card: #111827;
-  --card-hover: #1f2937;
-  --border: #334155;
+  --color-background: #0f0d0d;
+  --color-background-secondary: #0f0f0f;
 
-  --foreground: #ffffff;
-  --muted-foreground: #94a3b8;
+  --color-card: #111827;
+  --color-card-hover: #1f2937;
+
+  --color-border: #334155;
+
+  --color-foreground: #ffffff;
+  --color-muted: #94a3b8;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Roboto", "Outfit", sans-serif;
+}
+
+
+/* Chrome, Edge, Safari */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 9999px;
+  border: 2px solid var(--color-background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.9;
+}
+
+/* Firefox */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-background);
 }
