@@ -13,6 +13,25 @@ export interface IUser extends Document {
     lastLogin?: Date,
 }
 
+const SocialLinksSchema = new Schema({
+    github: {
+        type: String,
+        default: "",
+    },
+    linkedin: {
+        type: String,
+        default: "",
+    },
+    website: {
+        type: String,
+        default: "",
+    },
+    X: {
+        type: String,
+        default: "",
+    },
+})
+
 const UserSchema = new Schema<IUser>({
     username: {
         type: String,
@@ -32,7 +51,7 @@ const UserSchema = new Schema<IUser>({
         type: String,
         required: true,
     },
-    avatar: {
+    avatarUrl : {
         type: String,
         default: "",
     },
@@ -40,6 +59,10 @@ const UserSchema = new Schema<IUser>({
         type: String,
         default: "",
         maxlength: 300,
+    },
+    socialLinks: {
+        type: SocialLinksSchema,
+        default: {}
     },
     role: {
         type: String,
