@@ -1,15 +1,20 @@
+import { PlatformRole } from "@/constants/roles";
 import { model, models, Schema } from "mongoose";
 
-
-export type UserRole = "member" | "moderator" | "admin" | "owner" | "super_admin"
 
 export interface IUser extends Document {
     username: string,
     email: string,
-    passowrd: string,
-    avatar?: string,
+    password: string,
+    avatarUrl?: string,
     bio?: string,
-    role: UserRole,
+    role: PlatformRole,
+    socialLinks?: {
+        github?: string,
+        linkedin?: string,
+        website?: string,
+        X?: string,
+    },
     lastLogin?: Date,
 }
 
@@ -51,7 +56,7 @@ const UserSchema = new Schema<IUser>({
         type: String,
         required: true,
     },
-    avatarUrl : {
+    avatarUrl: {
         type: String,
         default: "",
     },
@@ -66,14 +71,8 @@ const UserSchema = new Schema<IUser>({
     },
     role: {
         type: String,
-        enum: [
-            "member",
-            "moderator",
-            "admin",
-            "owner",
-            "super_admin",
-        ],
-        default: "member"
+        enum: Object.values(PlatformRole),
+        default: PlatformRole.USER,
     },
     lastLogin: Date,
 },
