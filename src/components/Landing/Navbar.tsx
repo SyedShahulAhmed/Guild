@@ -52,14 +52,14 @@ export default function Navbar() {
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 lg:flex">
           <Link
-            href="/login"
+            href="/auth/login"
             className="text-foreground text-sm font-medium transition-all duration-300 hover:text-accent"
           >
             Sign In
           </Link>
 
           <Link
-            href="/signup"
+            href="/auth/signup"
             className="
               bg-accent
               rounded-full
@@ -117,7 +117,7 @@ export default function Navbar() {
 
           <div className="mt-6 flex flex-col gap-3">
             <Link
-              href="/login"
+              href="/auth/login"
               onClick={() => setOpen(false)}
               className="
                 text-foreground
@@ -133,7 +133,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/signup"
+              href="/auth/signup"
               onClick={() => setOpen(false)}
               className="
                 bg-accent
