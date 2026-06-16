@@ -18,6 +18,7 @@ const CommunitySchema = new Schema<ICommunity>(
             type: String,
             required: true,
             trim: true,
+            maxLength: 100,
         },
 
         slug: {
@@ -25,16 +26,22 @@ const CommunitySchema = new Schema<ICommunity>(
             required: true,
             unique: true,
             lowercase: true,
+            index: true,
         },
 
-        description: String,
+        description: {
+            type: String,
+            maxLength: 500,
+        },
 
         banner: String,
 
         logo: String,
 
-        category: String,
-
+        category: {
+            type: String,
+            required: true,
+        },
         visibility: {
             type: String,
             enum: ["PUBLIC", "PRIVATE"],
