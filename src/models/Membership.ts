@@ -9,7 +9,7 @@ export interface IMembership extends Document {
 
 const MembershipSchema = new Schema<IMembership>(
   {
-    user: {
+    user : {
       type: Schema.Types.ObjectId,
       ref: "User",
       required: true,
