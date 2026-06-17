@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         )
         return NextResponse.json({
             success: true,
-            avatarUrl: uploadResult.secure_url,
+            url: uploadResult.secure_url,
         });
     } catch {
 
