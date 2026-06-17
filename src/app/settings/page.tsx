@@ -70,7 +70,7 @@ export default function SettingsPage() {
       }
       setProfile((p) => ({
         ...p,
-        avatarUrl: data.avatarUrl,
+        avatarUrl: data.url,
       }));
 
       toast.success("Avatar Uploaded");
